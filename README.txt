@@ -22,4 +22,6 @@ Use the verify() method to verify your solution. If you're 100% sure that solve(
    static boolean verify(){
       return verified=true;
     }
-Observe that intentionally there is no verification but your verify() method. As it may be too easy to depict a solver from an efficient verifier.
+Note that intentionally there is no verification but your verify() method. As it may be too easy to depict a solver from an efficient verifier.
+Further note that the execution time is bound by a time-limit. The maximum execution time is set to be the Guinness World Record time it took to complete a sudoku, that is 1m 23.93s [http://www.sudoku.com/how-to-play/who-has-the-guinness-world-record-for-fastest-sudoku-player/].
+The variable sudokuAtLine in the Sudoku class allows you to specify a sudoku from the Sudokus.csv.
