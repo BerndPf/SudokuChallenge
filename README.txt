@@ -1,10 +1,10 @@
-At the founders forum, a private network of digital and technology entrepreneurs, Singapores prime minister talked about his vision of Singapore becoming a SmartNation [ http://www.pmo.gov.sg/mediacentre/transcript-speech-prime-minister-lee-hsien-loong-founders-forum-smart-nation-singapore ]. He stated that the last programme he wrote was a Sudoku solver and later on published his code. [ https://drive.google.com/folderview?id=0B2G2LjIu7WbdfjhaUmVzc1lCR2hUdk5fZllCOHdtbFItbU5qYzdqZGVxdmlnRkJyYVQ4VU0 ] Are you fit for the Smart Nation? [https://en.wikipedia.org/wiki/Smart_Nation ] Prove it by developing your own Sudoku Solver.
+At the founders forum, a private network of digital and technology entrepreneurs, Singapores prime minister talked about his vision of Singapore becoming a Smart Nation [http://www.pmo.gov.sg/mediacentre/transcript-speech-prime-minister-lee-hsien-loong-founders-forum-smart-nation-singapore]. He stated that the last programme he wrote was a Sudoku solver and later on published his code [https://drive.google.com/folderview?id=0B2G2LjIu7WbdfjhaUmVzc1lCR2hUdk5fZllCOHdtbFItbU5qYzdqZGVxdmlnRkJyYVQ4VU0]. Are you fit for the Smart Nation [https://en.wikipedia.org/wiki/Smart_Nation]? Prove it by developing your own Sudoku Solver.
 
 
 ===============
 
 
-Sudoku: [https://en.wikipedia.org/wiki/Sudoku]
+Sudoku [https://en.wikipedia.org/wiki/Sudoku]:
 Sudoku; originally called Number Place, is a logic-based, combinatorial number-placement puzzle. The objective is to fill a 9×9 grid with digits so that each column, each row, and each of the nine 3×3 sub-grids that compose the grid (also called "boxes", "blocks", "regions", or "sub-squares") contains all of the digits from 1 to 9. The puzzle setter provides a partially completed grid, which for a well-posed puzzle has a unique solution.
 
 Completed puzzles are always a type of Latin square with an additional constraint on the contents of individual regions. For example, the same single integer may not appear twice in the same row, column or in any of the nine 3×3 subregions of the 9x9 playing board.
