@@ -1,0 +1,117 @@
+public class SudokuSolver {
+
+	private boolean verified = true;
+	private Sudoku s;
+	private int[] verifierA = new int[9];
+
+	private void prepareVerifyArray() {
+		for (int i = 0; i < 9; i++) {
+			verifierA[i] = 1;
+		}
+	}
+
+	/**
+	 * 
+	 * @param row
+	 *            Zeilenfeld mit Änderungen
+	 * @param col
+	 *            Spaltenfeld mit Änderungen
+	 * @return true wenn keine Zahl doppelt
+	 */
+	private boolean verifyPart(int row, int col) {
+		if (verticalVerify(row, col) == true)
+			if (horizontalVerify(row, col) == true)
+				if (cubeVerify(row, col) == true)
+					return true;
+		return false;
+	}
+
+	private boolean verticalVerify(int row, int col) {
+		prepareVerifyArray();
+		int t = 0;
+		for (int i = 1; i <= 9; i++) {
+			t = s.get(i, col);
+			if ((t - 1) < 0)
+				continue;
+			else if ((--verifierA[t - 1]) < 0)
+				return false;
+		}
+		return true;
+	}
+
+	private boolean horizontalVerify(int row, int col) {
+		prepareVerifyArray();
+		int t = 0;
+		for (int i = 1; i <= 9; i++) {
+			t = s.get(row, i);
+			if ((t - 1) < 0)
+				continue;
+			else if ((--verifierA[t - 1]) < 0)
+				return false;
+		}
+		return true;
+	}
+
+	private boolean cubeVerify(int row, int col) {
+		prepareVerifyArray();
+		int t = 0;
+
+		// Linke obere Ecke finden
+		row = ((int) Math.ceil(row / 3.0) * 3) - 2;
+		col = ((int) Math.ceil(col / 3.0) * 3) - 2;
+
+		for (int i = 0; i < 3; i++)
+			for (int j = 0; j < 3; j++) {
+				if ((t = s.get(row + i, col + j)) != 0)
+					if ((--verifierA[t - 1]) < 0) {
+						return false;
+					}
+			}
+		return true;
+	}
+
+	boolean isVerified() {
+		return verified;
+	}
+
+	boolean verify() {
+		for (int i = 1; i <= 9; i++)
+			for (int j = 1; j <= 9; j++)
+				if (verifyPart(i, j) == false) {
+					System.out.println("verify wurde ausgeführt i: " + i
+							+ " ||j: " + j);
+					return (verified = false);
+				}
+		return true;
+	}
+
+	public SudokuSolver(Sudoku s) {
+		this.s = s;
+		if (solve(1, 1) == true)
+			System.out.println("SudokuSolver behauptet... Sudoku gelöst");
+	}
+
+	private boolean solve(int row, int col) {
+		if (s.isImmutable(row, col) == false) {
+			for (int i = 1; i <= 9; i++) {
+				s.set(row, col, i);
+				if (verifyPart(row, col) == true)
+					if (solveNext(row, col) == true)
+						return true;
+			}
+			s.set(row, col, 0);
+			return false;
+		}
+		return solveNext(row, col);
+	}
+
+	private boolean solveNext(int row, int col) {
+		if (row < 9)
+			return solve(row + 1, col);
+		else if (col < 9)
+			return solve(1, col + 1);
+		else
+			return true;
+	}
+
+}
